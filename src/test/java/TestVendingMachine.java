@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestInsert {
+public class TestVendingMachine {
 
 
     //System.out.println("Returning " + this.credit + " to customer");
