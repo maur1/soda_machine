@@ -25,7 +25,7 @@ public class Inventory {
         }
     }
 
-    public void reduceInventory(Soda soda, int amount) {
+    private void reduceInventory(Soda soda, int amount) {
         // should probably have amuont, but handling only one case now
         System.out.println(soda);
         switch (soda) {
@@ -44,5 +44,14 @@ public class Inventory {
     }
     public String getInventoryOverview() {
         return "Inventory: coke:" + coke_amount + " fanta:" + fanta_amount + " sprite:" + sprite_amount;
+    }
+
+    public void handleInventory(Soda soda) {
+        if (validateInventory(soda)) {
+            reduceInventory(soda, 1);
+        } else {
+            throw new IllegalArgumentException(
+                    soda + " not in stock. " + getInventoryOverview());
+        }
     }
 }
